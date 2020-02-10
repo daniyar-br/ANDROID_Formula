@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Будет линейная компоновка элементов, окно на весь экран,
+     компоненты должны располагаться вертикально и по-центру экрана -->
+
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:stretchColumns="*">
+
+    <TableRow>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_span="6"
+            android:gravity="center"
+            app:srcCompat="@drawable/formula" />
+        </TableRow>
+    <TableRow>
+
+
+        <EditText
+            android:id="@+id/editText_a"
+            android:hint="A="
+            android:layout_span="3"
+            android:inputType="number|text" />
+
+        <EditText
+            android:id="@+id/editText_x"
+            android:inputType="number|text"
+            android:layout_span="3"
+            android:hint="X="/>
+
+    </TableRow>
+    <!-- Кнопка на всю ширину экрана и с авторазмером по высоте,
+         при нажатии будет искать и вызывать метод "onClick",
+         отступ по-краям в 5 dp-->
+    <TableRow>
+
+        <EditText
+            android:id="@+id/editText_c"
+            android:inputType="number|text"
+            android:layout_span="3"
+            android:hint="C="/>
+
+        <EditText
+            android:id="@+id/editText_b"
+            android:inputType="number|text"
+            android:layout_span="3"
+            android:hint="B="/>
+
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/buttonSum"
+            android:layout_span="6"
+            android:onClick="onClick"
+            android:text="Сумма" />
+    </TableRow>
+    <!-- Текстовое поле для ответа на всю ширину экрана,
+         с авторазмером по высоте, по-центру экрана
+         и заданным цветом текста -->
+    <TableRow>
+        <TextView
+            android:id="@+id/textView_sum"
+            android:layout_span="6"
+            android:text="Введите цифры и нажмите кнопку сумма"
+            android:textColor="#256736"
+            android:gravity="center"/>
+    </TableRow>
+
+</TableLayout>
